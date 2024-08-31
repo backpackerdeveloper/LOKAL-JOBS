@@ -35,4 +35,4 @@ Lokal Jobs is a job-searching app that allows users to browse and bookmark job l
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/LOKAL_JOBS.git
+   git clone https://github.com/backpackerdeveloper/LOKAL-JOBS.git
