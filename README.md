@@ -7,7 +7,8 @@ Lokal Jobs is a job-searching app that allows users to browse and bookmark job l
 ## Screenshots
 
 ### Job Listings
-![Job Listings](https://your-screenshot-link.com/job_listings.png)
+<img src="https://firebasestorage.googleapis.com/v0/b/gsi-quickbook.appspot.com/o/Screenshot_20240901-022511.png?alt=media&token=16d12a79-4631-4bc0-b71d-843de920d51f" alt="Job Listings" width="400"/>
+
 
 ### Job Details
 ![Job Details](https://your-screenshot-link.com/job_details.png)
