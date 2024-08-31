@@ -27,7 +27,7 @@ class JobsFragment : Fragment() {
             putExtra("TITLE", job.title ?: "Title Not Mentioned")
             putExtra("PLACE", job.primary_details?.Place ?: "Place Not Mentioned")
             putExtra("SALARY", job.primary_details?.Salary ?: "Salary Not Mentioned")
-            putExtra("PHONE", job.custom_link ?: "Phone Not Mentioned")
+            putExtra("PHONE", job.custom_link?.removePrefix("tel:") ?: "Phone Not Mentioned")
             putExtra("OPENINGS", job.openings_count ?: "Openings Not Mentioned")
             putExtra("QUALIFICATIONS", job.primary_details?.Qualification ?: "Qualification Not Mentioned")
             putExtra("EXPERIENCE", job.primary_details?.Experience ?: "Experience Not Mentioned")
@@ -35,8 +35,8 @@ class JobsFragment : Fragment() {
             putExtra("VIEWS", job.views ?: "Views Not Mentioned")
             putExtra("COMPANY_NAME", job.company_name ?: "Company Not Mentioned")
             putExtra("JOB_DESCRIPTION", job.other_details ?: "Description Not Mentioned")
-            putExtra("WHATSAPP", job.whatsapp_no ?: "Description Not Mentioned")
-            putExtra("JOB_ROLE", job.job_role ?: "Description Not Mentioned")
+            putExtra("WHATSAPP", job.whatsapp_no ?: "WhatsApp Not Mentioned")
+            putExtra("JOB_ROLE", job.job_role ?: "Job Role Not Mentioned")
         }
         startActivity(intent)
     }

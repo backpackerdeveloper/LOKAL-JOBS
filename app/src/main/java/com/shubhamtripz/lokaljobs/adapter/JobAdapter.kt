@@ -1,5 +1,7 @@
 package com.shubhamtripz.lokaljobs.adapter
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -9,7 +11,7 @@ import com.shubhamtripz.lokaljobs.data.Job
 import com.shubhamtripz.lokaljobs.databinding.ItemJobBinding
 
 class JobAdapter(
-    private val onViewMoreClick: (Job) -> Unit // Pass a lambda function to handle view more clicks
+    private val onViewMoreClick: (Job) -> Unit
 ) : PagingDataAdapter<Job, JobAdapter.JobViewHolder>(JobDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {
@@ -27,12 +29,24 @@ class JobAdapter(
     class JobViewHolder(
         private val binding: ItemJobBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+
         fun bind(job: Job, onViewMoreClick: (Job) -> Unit) {
             binding.apply {
                 title.text = job.title ?: "Title Not Mentioned"
                 location.text = job.primary_details?.Place ?: "Place Not Mentioned"
                 salary.text = job.primary_details?.Salary ?: "Salary Not Mentioned"
-                phone.text = job.custom_link?.removePrefix("tel:") ?: "Phone Not Mentioned"
+
+                val phoneNumber = job.custom_link?.removePrefix("tel:") ?: "Phone Not Mentioned"
+                phone.text = phoneNumber
+
+                // Handle phone button click to open dialer
+                phone.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_DIAL).apply {
+                        data = Uri.parse("tel:$phoneNumber")
+                    }
+                    it.context.startActivity(intent)
+                }
+
                 viewMore.setOnClickListener { onViewMoreClick(job) }
             }
         }

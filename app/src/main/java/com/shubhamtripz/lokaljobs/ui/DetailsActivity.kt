@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import com.shubhamtripz.lokaljobs.R
 import com.shubhamtripz.lokaljobs.data.database.AppDatabase
@@ -43,6 +44,17 @@ class DetailsActivity : AppCompatActivity() {
         viewModel.setJobDescription(intent.getStringExtra("JOB_DESCRIPTION") ?: "Job Description Not Mentioned")
         viewModel.setwhatsappno(intent.getStringExtra("WHATSAPP") ?: "WHATSAPP Not Mentioned")
         viewModel.setJobRole(intent.getStringExtra("JOB_ROLE") ?: "Job Role Not Mentioned")
+
+        // -------- TOOLBAR CODE START -------
+        val toolbar: Toolbar = findViewById(R.id.topAppBar)
+        setSupportActionBar(toolbar)
+        // Enable the back button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        // Handle back button click
+        toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+        // -------- TOOLBAR CODE END ---------
 
         // Handle heart button click
         binding.heartBtn.setOnClickListener {
