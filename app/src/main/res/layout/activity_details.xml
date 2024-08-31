@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.shubhamtripz.lokaljobs.viewmodel.DetailsViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.title}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/place"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.place}"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/salary"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.salary}"
+                app:layout_constraintTop_toBottomOf="@id/place"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{viewModel.phone}"
+                app:layout_constraintTop_toBottomOf="@id/salary"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/openings"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.openings}"
+                app:layout_constraintTop_toBottomOf="@id/phone"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/qualifications"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.qualifications}"
+                app:layout_constraintTop_toBottomOf="@id/openings"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/experience"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.experience}"
+                app:layout_constraintTop_toBottomOf="@id/qualifications"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/noOfApplications"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.noOfApplications}"
+                app:layout_constraintTop_toBottomOf="@id/experience"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/views"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.views}"
+                app:layout_constraintTop_toBottomOf="@id/noOfApplications"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/companyName"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.companyName}"
+                app:layout_constraintTop_toBottomOf="@id/views"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+
+
+            <TextView
+                android:id="@+id/jobDescription"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.jobDescription}"
+                app:layout_constraintTop_toBottomOf="@id/companyName"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/whatsapp_no"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.whatsapp}"
+                app:layout_constraintTop_toBottomOf="@id/jobDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/job_role"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.jobrole}"
+                app:layout_constraintTop_toBottomOf="@id/whatsapp_no"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/heart_btn"
+                android:layout_marginTop="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/job_role"
+                android:src="@drawable/ic_heart"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
