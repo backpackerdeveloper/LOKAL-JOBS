@@ -23,7 +23,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:title="Lokal Jobs"
+                app:title="Job Details"
                 app:titleCentered="true" />
 
             <androidx.cardview.widget.CardView
@@ -49,13 +49,14 @@
                         android:layout_gravity="center"
                         android:id="@+id/job_role"
                         android:layout_width="0dp"
+                        android:textStyle="bold"
                         android:layout_marginLeft="7dp"
                         android:fontFamily="@font/bariol_bold"
                         android:layout_height="wrap_content"
                         android:text="@{viewModel.jobrole}"
                         android:maxLines="1"
                      android:layout_weight="1.5"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
 
 
                     <ImageView
@@ -81,7 +82,6 @@
                             android:src="@drawable/salary"/>
 
                     <TextView
-                        android:fontFamily="cursive"
                         android:id="@+id/salary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
