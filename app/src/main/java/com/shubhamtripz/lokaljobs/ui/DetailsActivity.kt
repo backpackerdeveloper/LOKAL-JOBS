@@ -25,12 +25,10 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Set up data binding
         binding = DataBindingUtil.setContentView(this, R.layout.activity_details)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        // Extract data from Intent and set it in the ViewModel
         viewModel.setTitle(intent.getStringExtra("TITLE") ?: "Title Not Mentioned")
         viewModel.setPlace(intent.getStringExtra("PLACE") ?: "Place Not Mentioned")
         viewModel.setSalary(intent.getStringExtra("SALARY") ?: "Salary Not Mentioned")
@@ -56,7 +54,7 @@ class DetailsActivity : AppCompatActivity() {
         }
         // -------- TOOLBAR CODE END ---------
 
-        // Handle heart button click
+        // Handle heart button click (Bookmark wala button )
         binding.heartBtn.setOnClickListener {
             isHeartSelected = !isHeartSelected
             updateHeartIcon()

@@ -24,7 +24,7 @@
             android:paddingBottom="8dp"
             android:visibility="gone"/>
 
-        <!-- RecyclerView for displaying bookmarks -->
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_bookmarks"
             android:layout_width="match_parent"

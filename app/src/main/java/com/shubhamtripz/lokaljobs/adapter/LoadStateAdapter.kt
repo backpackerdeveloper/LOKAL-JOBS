@@ -1,4 +1,3 @@
-// adapter/LoadStateAdapter.kt
 package com.shubhamtripz.lokaljobs.adapter
 
 import android.view.LayoutInflater

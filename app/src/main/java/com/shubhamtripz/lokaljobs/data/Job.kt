@@ -6,7 +6,7 @@ data class Job(
     val primary_details: PrimaryDetails,
     val fee_details: FeeDetails,
     val custom_link: String,
-    val openings_count: String, // Example field
+    val openings_count: String,
     val qualification: String,
     val experience: String,
     val num_applications: String,
