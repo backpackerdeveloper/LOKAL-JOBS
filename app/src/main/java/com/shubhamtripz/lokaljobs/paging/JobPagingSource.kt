@@ -1,4 +1,3 @@
-// paging/JobPagingSource.kt
 package com.shubhamtripz.lokaljobs.paging
 
 import androidx.paging.PagingSource
@@ -25,7 +24,6 @@ class JobPagingSource(private val apiService: ApiService) : PagingSource<Int, Jo
     }
 
     override fun getRefreshKey(state: PagingState<Int, Job>): Int? {
-        // For paging to work properly, implement the refresh key logic if needed
         return null
     }
 }

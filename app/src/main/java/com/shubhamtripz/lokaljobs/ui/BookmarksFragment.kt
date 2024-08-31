@@ -18,26 +18,32 @@ class BookmarksFragment : Fragment() {
 
     private lateinit var binding: FragmentBookmarksBinding
     private val viewModel: BookmarksViewModel by viewModels()
-    private val bookmarksAdapter = BookmarksAdapter { job ->
-        // Handle job click to view details
-        val intent = Intent(requireContext(), DetailsActivity::class.java).apply {
-            putExtra("JOB_ID", job.jobId)
-            putExtra("TITLE", job.title)
-            putExtra("PLACE", job.place)
-            putExtra("SALARY", job.salary)
-            putExtra("PHONE", job.phone)
-            putExtra("OPENINGS", job.openings)
-            putExtra("QUALIFICATIONS", job.qualifications)
-            putExtra("EXPERIENCE", job.experience)
-            putExtra("NO_OF_APPLICATIONS", job.noOfApplications)
-            putExtra("VIEWS", job.views)
-            putExtra("COMPANY_NAME", job.companyName)
-            putExtra("JOB_DESCRIPTION", job.jobDescription)
-            putExtra("WHATSAPP", job.whatsapp)
-            putExtra("JOB_ROLE", job.jobRole)
+    private val bookmarksAdapter = BookmarksAdapter(
+        onClick = { job ->
+            // Handle job click to view details
+            val intent = Intent(requireContext(), DetailsActivity::class.java).apply {
+                putExtra("JOB_ID", job.jobId)
+                putExtra("TITLE", job.title)
+                putExtra("PLACE", job.place)
+                putExtra("SALARY", job.salary)
+                putExtra("PHONE", job.phone)
+                putExtra("OPENINGS", job.openings)
+                putExtra("QUALIFICATIONS", job.qualifications)
+                putExtra("EXPERIENCE", job.experience)
+                putExtra("NO_OF_APPLICATIONS", job.noOfApplications)
+                putExtra("VIEWS", job.views)
+                putExtra("COMPANY_NAME", job.companyName)
+                putExtra("JOB_DESCRIPTION", job.jobDescription)
+                putExtra("WHATSAPP", job.whatsapp)
+                putExtra("JOB_ROLE", job.jobRole)
+            }
+            startActivity(intent)
+        },
+        onDeleteClick = { job ->
+            // Handle delete click
+            viewModel.deleteJob(job)
         }
-        startActivity(intent)
-    }
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

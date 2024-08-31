@@ -4,16 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.shubhamtripz.lokaljobs.data.entity.BookmarkedJob
-import com.shubhamtripz.lokaljobs.databinding.ItemJobBinding
+import com.shubhamtripz.lokaljobs.databinding.ItemJobBookmarksBinding
 
 class BookmarksAdapter(
-    private val onClick: (BookmarkedJob) -> Unit
+    private val onClick: (BookmarkedJob) -> Unit,
+    private val onDeleteClick: (BookmarkedJob) -> Unit
 ) : RecyclerView.Adapter<BookmarksAdapter.BookmarkViewHolder>() {
 
     private var bookmarkedJobs: List<BookmarkedJob> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookmarkViewHolder {
-        val binding = ItemJobBinding.inflate(
+        val binding = ItemJobBookmarksBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -32,7 +33,7 @@ class BookmarksAdapter(
         notifyDataSetChanged()
     }
 
-    inner class BookmarkViewHolder(private val binding: ItemJobBinding) :
+    inner class BookmarkViewHolder(private val binding: ItemJobBookmarksBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(job: BookmarkedJob) {
@@ -41,6 +42,7 @@ class BookmarksAdapter(
             binding.salary.text = job.salary
             binding.phone.text = job.phone
             binding.viewMore.setOnClickListener { onClick(job) }
+            binding.deleteBookmarks.setOnClickListener { onDeleteClick(job) }
         }
     }
 }
