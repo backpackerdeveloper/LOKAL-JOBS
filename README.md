@@ -1,7 +1,5 @@
 # LOKAL JOBS
 
-[Watch the demo video](https://www.youtube.com/watch?v=QKjmB_1ByPU)
-
 Lokal Jobs is a job-searching app that allows users to browse and bookmark job listings. The app has a jobs fragment that displays multiple job listings and a detailed job screen where users can view the specifics of a selected job. Bookmarked jobs can be viewed offline without an internet connection.
 
 [![Download APK File](https://upload.wikimedia.org/wikipedia/commons/1/11/Download_apk.png)](https://www.jiocloud.com/l/?u=89yHGUpFYGZ2AJlEcjipIMnSVzQtfPWVmkBw49E-yio=PrF)
